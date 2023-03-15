@@ -10,9 +10,13 @@ const MiniCardList = ({ endpoint, categoryInput }) => {
     GET(endpoint).then((data) => setMiniCards(() => data.products));
   }, []);
 
+  const filteredData = miniCards.filter((card) =>
+    card.category.includes(categoryInput)
+  );
+
   return (
     <div className="MiniCardList">
-      {miniCards.map((card) => (
+      {filteredData.map((card) => (
         <MiniCard imgSrc={card.thumbnail} imgAlt={card.title} key={card.id} />
       ))}
     </div>

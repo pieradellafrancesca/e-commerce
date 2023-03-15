@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./index.css";
 
-const Navbar = ({ setInputCategory }) => {
+const Navbar = ({ setCategoryInput }) => {
   const [inputValue, setInputValue] = useState("");
 
   const onHandleChange = (event) => {
@@ -10,7 +10,7 @@ const Navbar = ({ setInputCategory }) => {
 
   const onHandleSubmit = (event) => {
     event.preventDefault();
-    setInputCategory(inputValue);
+    setCategoryInput(inputValue);
   };
 
   return (

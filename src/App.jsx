@@ -8,13 +8,18 @@ import Footer from "./components/footer";
 import "./App.css";
 
 function App() {
-  const [categoryInput, setInputCategory] = useState("");
+  const [categoryInput, setCategoryInput] = useState("");
+
+  console.log(categoryInput);
 
   return (
     <div className="App">
-      <Navbar setInputCategory={setInputCategory} />
+      <Navbar setCategoryInput={setCategoryInput} />
       <Hero />
-      <MiniCardList endpoint="/products" categoryInput={categoryInput} />
+      <MiniCardList
+        endpoint="/products?limit=100"
+        categoryInput={categoryInput}
+      />
       <CardList title="Technology" endpoint="/products?limit=10" />
       <hr />
       <CardList title="Skincare" endpoint="/products?limit=10&skip=10" />

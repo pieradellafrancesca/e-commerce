@@ -1,5 +1,6 @@
 .MiniCardList {
   display: flex;
+  /* justify-content: center; */
   gap: 10px;
   margin: 0 50px;
   padding: 10px;
