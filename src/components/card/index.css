@@ -27,15 +27,15 @@
   padding: 10px;
 }
 
-.Card__text-title {
+.Card__text--title {
   margin: 6px 0;
 }
 
-.Card__text-desc {
+.Card__text--desc {
   font-size: 0.9rem;
 }
 
-.Card__text-cat {
+.Card__text--cat {
   display: inline;
   padding: 4px;
   border: 2px solid rgb(37, 37, 37);
@@ -43,7 +43,7 @@
   font-weight: bold;
 }
 
-.Card__text-price {
+.Card__text--price {
   font-weight: bold;
   font-size: 1.2rem;
   text-align: right;

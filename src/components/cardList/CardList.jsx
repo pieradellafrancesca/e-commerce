@@ -4,7 +4,7 @@ import Card from "../card/Card";
 import SpinnerLoading from "../spinnerLoading/SpinnerLoading";
 import "./index.css";
 
-const CardList = ({ title, endpoint }) => {
+const CardList = ({ title, endpoint, setModalContext }) => {
   const [productList, setProductList] = useState([]);
 
   useEffect(() => {
@@ -17,7 +17,11 @@ const CardList = ({ title, endpoint }) => {
       <div className="CardList__list">
         {productList.length ? (
           productList.map((product) => (
-            <Card productData={product} key={product.id} />
+            <Card
+              productData={product}
+              key={product.id}
+              setModalContext={setModalContext}
+            />
           ))
         ) : (
           <SpinnerLoading />
