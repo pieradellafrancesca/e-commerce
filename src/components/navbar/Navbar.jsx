@@ -68,9 +68,12 @@ const Navbar = ({
       </form> */}
 
       <div className="Navbar__cart" onClick={onHandleOpenCart}>
-        <p>
-          {cartListLength} <BsCart4 className="Navbar--icon" />
+        <p
+          className={`Navbar__cart--num ${cartListLength === 0 ? "none" : ""}`}
+        >
+          {cartListLength}
         </p>
+        <BsCart4 className="Navbar__cart--icon" />
       </div>
     </div>
   );

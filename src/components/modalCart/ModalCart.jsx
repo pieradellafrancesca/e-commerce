@@ -7,9 +7,11 @@ const ModalCart = ({ cartList, setModalContext, setCartList }) => {
       ...prev,
       isCartVisible: false,
     }));
+
   return (
     <div className="ModalCart">
       <div className="ModalCart__content">
+        <h3>CART</h3>
         {cartList.map((item) => (
           <CartItem cartData={item} setCartList={setCartList} key={item.id} />
         ))}

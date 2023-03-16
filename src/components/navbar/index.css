@@ -33,6 +33,11 @@
   background-color: rgba(0, 0, 0, 0.8);
 }
 
+.Navbar form {
+  display: flex;
+  justify-content: center;
+}
+
 .Navbar input {
   margin-bottom: 20px;
   width: 300px;
@@ -43,16 +48,40 @@
   outline: none;
 }
 
-.Navbar__cart {
+.Navbar__cart--icon {
   position: absolute;
-  top: 10%;
+  top: 40%;
   right: 5%;
   color: white;
-  font-size: 2rem;
+  font-size: 2.5rem;
   cursor: pointer;
   transition: all 0.25s;
 }
 
-.Navbar__cart:hover {
+.Navbar__cart--num {
+  position: absolute;
+  top: 20%;
+  right: 7%;
+  color: black;
+  width: 25px;
+  height: 25px;
+  border-radius: 100%;
+  text-align: center;
+  font-weight: bold;
+  background-color: tomato;
+  z-index: 2;
+}
+
+.none {
+  display: none;
+}
+
+.Navbar__cart--icon:hover {
   transform: scale(1.2);
+}
+
+@media screen and (max-width: 911px) {
+  .Navbar form {
+    width: 50%;
+  }
 }

@@ -18,12 +18,17 @@
   padding: 40px;
   width: 50vw;
   height: 50vh;
-  gap: 10px;
+  gap: 12px;
   border-radius: 12px;
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.35);
   background-color: #0cbaba;
   background-image: linear-gradient(315deg, #0cbaba 0%, #380036 74%);
   color: white;
+}
+
+.ModalCart__content h3 {
+  margin-bottom: 30px;
+  text-align: center;
 }
 
 .ModalCart--close {
