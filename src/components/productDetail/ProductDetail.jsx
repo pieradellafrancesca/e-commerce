@@ -18,8 +18,8 @@ const ProductDetail = ({ productData, setCartList, setModalContext }) => {
         <h1>{productData.title}</h1>
         <p>{productData.description}</p>
         <div className="ProductDetail__text--info">
-          <span>{productData.category}</span>
-          <span>$ {productData.price}</span>
+          <p className="ProductDetail__text--cat">{productData.category}</p>
+          <p className="ProductDetail__text--price">$ {productData.price}</p>
         </div>
         <div className="ProductDetail__gallery">
           {productData.images.map((image) => (

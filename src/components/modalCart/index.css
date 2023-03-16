@@ -35,7 +35,7 @@
   background-color: transparent;
   border: 0;
   cursor: pointer;
-  transition: transform 1.35s;
+  transition: all 0.3s;
 }
 
 .ModalCart--close:hover {
