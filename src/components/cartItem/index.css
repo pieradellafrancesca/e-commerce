@@ -8,6 +8,7 @@
   height: 50px;
   width: 50px;
   object-fit: cover;
+  border-radius: 4px;
 }
 
 .CartItem--remove {
@@ -18,7 +19,7 @@
   background-color: gray;
   color: white;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: all ease 0.3s;
 }
 
 .CartItem--remove:hover {

@@ -50,9 +50,9 @@
   color: white;
   font-size: 2rem;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: all 0.25s;
 }
 
 .Navbar__cart:hover {
-  transform: scale(1.1);
+  transform: scale(1.2);
 }
