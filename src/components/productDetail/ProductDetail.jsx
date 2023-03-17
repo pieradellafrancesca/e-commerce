@@ -9,7 +9,25 @@ const ProductDetail = ({ productData, setCartList, setModalContext }) => {
     }));
 
   const onHandleAddCart = () => {
-    setCartList((prev) => [...prev, productData]);
+    const localStorageCartItems =
+      JSON.parse(localStorage.getItem("cartList")) || [];
+
+    // evito di aggiungere lo stesso item:
+    setCartList((prev) =>
+      !!prev.find((item) => item.id === productData.id)
+        ? [...prev]
+        : [...prev, productData]
+    );
+
+    if (!localStorageCartItems.find((item) => item.id === productData.id)) {
+      localStorage.setItem(
+        "cartList",
+        JSON.stringify([...localStorageCartItems, productData])
+      );
+      alert(`${productData.title} added to cart!`);
+    } else {
+      alert(`${productData.title} IS ALREADY IN THE CART!`);
+    }
   };
 
   return (
@@ -26,9 +44,6 @@ const ProductDetail = ({ productData, setCartList, setModalContext }) => {
             <img src={image} alt={image.title} key={image} />
           ))}
         </div>
-        {/* <button onClick={onHandleAddCart} className="ProductDetail--cart">
-          🛒
-        </button> */}
         <BsCart4 onClick={onHandleAddCart} className="ProductDetail--cart" />
         <button onClick={onHandleClose} className="ProductDetail--close">
           x

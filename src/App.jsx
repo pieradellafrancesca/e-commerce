@@ -12,20 +12,26 @@ import "./App.css";
 function App() {
   const [categoryInput, setCategoryInput] = useState("");
   // const [categorySelect, setCategorySelect] = useState("");
-  const [cartList, setCartList] = useState([]);
+  const [cartList, setCartList] = useState(
+    JSON.parse(localStorage.getItem("cartList")) || []
+  );
   const [modalContext, setModalContext] = useState({
     productData: {},
     isVisible: false,
-    isCartVisible: false,
   });
+  const [isCartVisible, setCartVisibility] = useState(false);
+
+  const localStorageCartList =
+    window !== "undefined" &&
+    JSON.parse(localStorage.getItem("cartList") || "[]");
 
   return (
     <div className="App">
       <Navbar
         setCategoryInput={setCategoryInput}
         // setCategorySelect={setCategorySelect}
-        cartListLength={cartList.length}
-        setModalContext={setModalContext}
+        cartListLength={localStorageCartList.length || cartList.length}
+        setCartVisibility={setCartVisibility}
       />
       <Hero />
       <MiniCardList
@@ -52,10 +58,9 @@ function App() {
           setModalContext={setModalContext}
         />
       )}
-      {modalContext.isCartVisible && (
+      {isCartVisible && (
         <ModalCart
-          productData={modalContext.productData}
-          setModalContext={setModalContext}
+          setCartVisibility={setCartVisibility}
           cartList={cartList}
           setCartList={setCartList}
         />

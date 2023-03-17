@@ -7,7 +7,7 @@ const Navbar = ({
   setCategoryInput,
   setCategorySelect,
   cartListLength,
-  setModalContext,
+  setCartVisibility,
 }) => {
   const [inputValue, setInputValue] = useState("");
   const [selectValue, setSelectValue] = useState("");
@@ -22,12 +22,6 @@ const Navbar = ({
     setCategoryInput(inputValue);
   };
 
-  const onHandleOpenCart = () =>
-    setModalContext((prev) => ({
-      ...prev,
-      isCartVisible: true,
-    }));
-
   useEffect(() => {
     GET("/products/categories").then((data) => setOptions(() => data));
   }, []);
@@ -38,6 +32,8 @@ const Navbar = ({
   //   event.preventDefault();
   //   setCategorySelect(selectValue);
   // };
+
+  const onHandleOpenCart = () => setCartVisibility((prev) => !prev);
 
   return (
     <div className="Navbar">
@@ -67,13 +63,11 @@ const Navbar = ({
         </select>
       </form> */}
 
-      <div className="Navbar__cart" onClick={onHandleOpenCart}>
-        <p
-          className={`Navbar__cart--num ${cartListLength === 0 ? "none" : ""}`}
-        >
+      <div className="Navbar__cart">
+        <p className={`Navbar__cart--num ${!cartListLength ? "none" : ""}`}>
           {cartListLength}
         </p>
-        <BsCart4 className="Navbar__cart--icon" />
+        <BsCart4 className="Navbar__cart--icon" onClick={onHandleOpenCart} />
       </div>
     </div>
   );

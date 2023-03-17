@@ -72,10 +72,6 @@
   z-index: 2;
 }
 
-.none {
-  display: none;
-}
-
 .Navbar__cart--icon:hover {
   transform: scale(1.2);
 }

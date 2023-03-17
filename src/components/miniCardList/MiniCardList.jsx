@@ -11,7 +11,7 @@ const MiniCardList = ({ endpoint, categoryInput, categorySelect }) => {
   }, []);
 
   const filteredData = miniCards.filter((card) =>
-    card.category.includes(categoryInput)
+    !categoryInput ? miniCards : card.category === categoryInput
   );
 
   // CATEGORY: [

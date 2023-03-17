@@ -2,7 +2,8 @@
   display: flex;
   align-items: center;
   gap: 40px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.75);
+  padding: 4px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
 }
 
 .CartItem__image {
@@ -14,6 +15,7 @@
 
 .CartItem p {
   flex-basis: 100%;
+  font-size: 0.9rem;
 }
 
 .CartItem--remove {
@@ -29,4 +31,10 @@
 
 .CartItem--remove:hover {
   background-color: coral;
+}
+
+@media screen and (max-width: 411px) {
+  .CartItem__image {
+    display: none;
+  }
 }
