@@ -26,7 +26,7 @@ const CartItem = ({ cartData, setCartList }) => {
         {/* <button className="CartItem__first--btn" onClick={() => {}}>
           -
         </button> */}
-        <p>0</p>
+        {/* <p>0</p> */}
         {/* <button className="CartItem__second--btn" onClick={() => {}}>
           +
         </button> */}
