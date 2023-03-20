@@ -1,6 +1,7 @@
 .CardList {
   display: flex;
   flex-direction: column;
+  color: whitesmoke;
 }
 
 .CardList h2 {

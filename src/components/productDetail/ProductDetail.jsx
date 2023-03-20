@@ -8,6 +8,49 @@ const ProductDetail = ({ productData, setCartList, setModalContext }) => {
       isVisible: false,
     }));
 
+  // const onHandleAddCart = () => {
+  //   const localStorageCartItems =
+  //     JSON.parse(localStorage.getItem("cartList")) || [];
+
+  //   const productExist = localStorageCartItems.find(
+  //     (item) => item.id === productData.id
+  //   ); // il prodotto esiste nella lista
+  //   if (productExist) {
+  //     // se esiste,
+  //     setCartList(() => {
+  //       localStorageCartItems.map(
+  //         (item) =>
+  //           item.id === productData.id
+  //             ? { ...productExist, quantity: productExist.quantity + 1 } //troviamo l'elemento e lo aumentiamo di 1
+  //             : item // se non esiste, aggiungiaamo il nuovo elemento al carrello
+  //       );
+  //     });
+  //     localStorage.setItem(
+  //       "cartList",
+  //       JSON.stringify([...localStorageCartItems])
+  //     );
+  //   } else {
+  //     //se il prodotto non esiste nel carrello
+  //     setCartList(() => [
+  //       ...localStorageCartItems,
+  //       { ...productData, quantity: 1 },
+  //     ]);
+  //     localStorage.setItem(
+  //       "cartList",
+  //       JSON.stringify([
+  //         ...localStorageCartItems,
+  //         { ...productData, quantity: 1 },
+  //       ])
+  //     );
+  //   }
+  // };
+  // setCartList((prev) => [...prev, productData]);
+  // localStorage.setItem(
+  //   "cartList",
+  //   JSON.stringify([...localStorageCartItems, productData])
+  // );
+  // };
+
   const onHandleAddCart = () => {
     const localStorageCartItems =
       JSON.parse(localStorage.getItem("cartList")) || [];

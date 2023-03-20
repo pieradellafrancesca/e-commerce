@@ -1,14 +1,15 @@
 .Card {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  /* justify-content: flex-start; */
   width: 140px;
-  height: 380px;
+  height: 360px;
   border-radius: 6px;
   box-shadow: 0 0 4px lightgray;
+  color: whitesmoke;
   cursor: pointer;
   transition: transform 0.35s;
-  scroll-snap-align: end;
+  scroll-snap-align: start;
 }
 
 .Card:hover {
@@ -17,7 +18,7 @@
 
 .Card__image {
   width: 140px;
-  height: 140px;
+  height: 40%;
   border-top-right-radius: 6px;
   border-top-left-radius: 6px;
   object-fit: cover;
@@ -25,6 +26,10 @@
 
 .Card__text {
   padding: 10px;
+  height: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .Card__text--title {
@@ -32,19 +37,11 @@
 }
 
 .Card__text--desc {
-  font-size: 0.9rem;
-}
-
-.Card__text--cat {
-  display: inline;
-  padding: 4px;
-  border: 2px solid rgb(37, 37, 37);
-  font-size: 0.8rem;
-  font-weight: bold;
+  font-size: 0.85rem;
 }
 
 .Card__text--price {
-  font-weight: bold;
+  font-weight: 600;
   font-size: 1.2rem;
   text-align: right;
 }

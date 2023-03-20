@@ -17,11 +17,10 @@ const Card = ({ productData, setModalContext }) => {
         alt={productData.title}
       />
       <div className="Card__text">
-        <h3 className="Card__text--title">{shortTitle(productData.title)}</h3>
+        <h4 className="Card__text--title">{shortTitle(productData.title)}</h4>
         <p className="Card__text--desc">
           {shortDescription(productData.description)}
         </p>
-        <p className="Card__text--cat">{productData.category}</p>
         <p className="Card__text--price">$ {productData.price}</p>
       </div>
     </div>

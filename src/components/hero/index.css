@@ -9,10 +9,19 @@
 
 .Hero__text {
   position: absolute;
-  padding: 12px;
+  left: 5%;
+  width: 300px;
+  height: 70%;
+  padding: 30px;
   color: white;
   background-color: rgba(0, 0, 0, 0.7);
   border-radius: 6px;
+  /* transform: rotate(90deg); */
+}
+
+.Hero__text h1,
+.Hero__text h3 {
+  letter-spacing: 0.15rem;
 }
 
 .Hero img {
