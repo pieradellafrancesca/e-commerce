@@ -38,6 +38,8 @@
 
 .ProductDetail__text--cat {
   font-style: italic;
+  border: 1px dashed black;
+  padding: 5px;
 }
 
 .ProductDetail__text--price {
