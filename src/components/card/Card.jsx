@@ -1,4 +1,4 @@
-import { shortDescription, shortTitle } from "../../utils/func";
+import { shortDescription } from "../../utils/func";
 import "./index.css";
 
 const Card = ({ productData, setModalContext }) => {
@@ -17,11 +17,16 @@ const Card = ({ productData, setModalContext }) => {
         alt={productData.title}
       />
       <div className="Card__text">
-        <h4 className="Card__text--title">{shortTitle(productData.title)}</h4>
+        <h4 className="Card__text--title">{productData.title}</h4>
         <p className="Card__text--desc">
           {shortDescription(productData.description)}
         </p>
-        <p className="Card__text--price">$ {productData.price}</p>
+        <div className="Card__text--value">
+          <p className="Card__text--discount">
+            {productData.discountPercentage}%
+          </p>
+          <p className="Card__text--price">$ {productData.price}</p>
+        </div>
       </div>
     </div>
   );
