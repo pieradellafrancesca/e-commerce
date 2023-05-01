@@ -11,7 +11,7 @@ import "./App.css";
 
 function App() {
   const [categoryInput, setCategoryInput] = useState("");
-  // const [categorySelect, setCategorySelect] = useState("");
+  const [categorySelect, setCategorySelect] = useState("");
   const [cartList, setCartList] = useState(
     JSON.parse(localStorage.getItem("cartList")) || []
   );
@@ -29,15 +29,18 @@ function App() {
     <div className="App">
       <Navbar
         setCategoryInput={setCategoryInput}
-        // setCategorySelect={setCategorySelect}
-        cartListLength={localStorageCartList.length || cartList.length}
+        setCategorySelect={setCategorySelect}
+        cartListLength={
+          localStorageCartList.reduce((acc, item) => acc + item.quantity, 0) ||
+          cartList.reduce((acc, item) => acc + item.quantity, 0)
+        }
         setCartVisibility={setCartVisibility}
       />
       <Hero />
       <MiniCardList
         endpoint="/products?limit=100"
         categoryInput={categoryInput}
-        // categorySelect={categorySelect}
+        categorySelect={categorySelect}
       />
       <CardList
         title="Technology"
@@ -46,8 +49,8 @@ function App() {
       />
       <hr />
       <CardList
-        title="Skincare"
-        endpoint="/products?limit=10&skip=10"
+        title="Watches"
+        endpoint="/products?limit=10&skip=60"
         setModalContext={setModalContext}
       />
       <Footer />

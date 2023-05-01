@@ -1,4 +1,10 @@
 .MiniCard {
+  position: relative;
+  width: 100px;
+  height: 100px;
+}
+
+.MiniCard__img {
   width: 100px;
   height: 100px;
   border-radius: 6px;
@@ -10,7 +16,25 @@
   scroll-snap-align: start;
 }
 
-.MiniCard:hover {
+.MiniCard__img:hover {
   transform: scale(1.1);
   filter: grayscale(0) saturate(1.2) contrast(1.2);
+}
+
+.MiniCard__desc {
+  position: absolute;
+  top: 0;
+  left: -20%;
+  background: lightgray;
+  color: black;
+  visibility: hidden;
+  border: 1px solid black;
+  padding: 2px 4px;
+  font-size: 0.75rem;
+  text-transform: capitalize;
+}
+
+.MiniCard:hover .MiniCard__desc {
+  visibility: visible;
+  opacity: 0.95;
 }

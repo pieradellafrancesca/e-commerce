@@ -1,7 +1,9 @@
 .CardList {
   display: flex;
   flex-direction: column;
-  color: whitesmoke;
+  color: black;
+  height: 450px;
+  margin: 30px 0;
 }
 
 .CardList h2 {
@@ -9,10 +11,57 @@
 }
 
 .CardList__list {
+  position: relative;
   display: flex;
-  gap: 20px;
-  padding: 20px;
+  gap: 30px;
+  padding: 20px 0;
   scroll-behavior: smooth;
   scroll-snap-type: x mandatory;
-  overflow-x: auto;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+.CardList__left,
+.CardList__right {
+  position: sticky;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: calc(50% - 60px);
+  width: 50px;
+  height: 120px;
+  border: 0;
+  outline: 0;
+  border-radius: 4px;
+  font-size: 2rem;
+  z-index: 1;
+  cursor: pointer;
+  opacity: 0;
+  transition: all 0.2s;
+}
+
+.CardList__list:hover .CardList__left,
+.CardList__list:hover .CardList__right {
+  background-color: white;
+  box-shadow: 0 0 6px 1px rgb(100, 100, 100);
+  color: rgb(100, 100, 100);
+  opacity: 1;
+}
+
+.CardList__left:active .CardList__icon,
+.CardList__right:active .CardList__icon {
+  color: #e91e63;
+}
+
+.CardList__left {
+  left: -2px;
+}
+
+.CardList__right {
+  right: -2px;
+}
+
+.CardList__icon {
+  width: 40px;
+  height: 40px;
 }

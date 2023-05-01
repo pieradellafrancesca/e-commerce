@@ -29,3 +29,14 @@
   height: 300px;
   object-fit: cover;
 }
+
+@media screen and (max-width: 768px) {
+  .Hero,
+  .Hero__text {
+    width: 100%;
+  }
+
+  .Hero__text {
+    left: 0;
+  }
+}

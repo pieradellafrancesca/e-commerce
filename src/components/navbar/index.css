@@ -3,19 +3,27 @@
   top: 0;
   left: 0;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
   width: 100%;
   height: 120px;
   background-image: radial-gradient(
     circle farthest-corner at 1.3% 2.8%,
-    rgba(239, 249, 249, 1) 0%,
-    rgba(182, 199, 226, 1) 100.2%
+    rgb(255, 130, 44) 0%,
+    rgb(255, 178, 44) 100.2%
   );
-  z-index: 1;
+  z-index: 2;
 }
 
-.Navbar ul {
+.Navbar__logo {
+  position: absolute;
+  left: 20px;
+  width: 120px;
+  height: 74.8px;
+  cursor: pointer;
+}
+
+/* .Navbar ul {
   display: flex;
   justify-content: center;
   gap: 20px;
@@ -30,18 +38,21 @@
   border-radius: 6px;
   color: white;
   cursor: pointer;
+  transition: all 0.25s;
 }
 
 .Navbar ul li:hover {
   background-color: rgba(0, 0, 0, 0.8);
-}
+} */
 
 .Navbar form {
   display: flex;
   justify-content: center;
+  align-items: center;
+  gap: 10px;
 }
 
-.Navbar input {
+/* .Navbar input {
   margin-bottom: 20px;
   width: 300px;
   padding: 12px 24px;
@@ -49,11 +60,46 @@
   border-radius: 6px;
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.35);
   outline: none;
+} */
+
+.Navbar select {
+  color: gray;
+  margin-top: 10px;
+  width: 270px;
+  height: 32px;
+  padding: 0 24px;
+  border: 0;
+  border-radius: 6px;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.35);
+  outline: none;
+  text-transform: capitalize;
+}
+
+.Navbar__select--select {
+  color: lightgray;
+}
+
+.Navbar__form--submit {
+  margin-top: 10px;
+  width: 100px;
+  height: 32px;
+  padding: 0 24px;
+  border: 0;
+  border-radius: 6px;
+  color: gray;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.35);
+  transition: all 0.25s;
+  cursor: pointer;
+}
+
+.Navbar__form--submit:hover {
+  background-color: rgba(0, 0, 0, 0.35);
+  color: white;
 }
 
 .Navbar__cart--icon {
   position: absolute;
-  top: 40%;
+  top: calc(60px - 20px);
   right: 5%;
   color: white;
   font-size: 2.5rem;
@@ -61,27 +107,39 @@
   transition: all 0.25s;
 }
 
-.Navbar__cart--num {
-  position: absolute;
-  top: 20%;
-  right: 7%;
-  color: black;
-  width: 22px;
-  height: 22px;
-  border-radius: 100%;
-  text-align: center;
-  font-weight: bold;
-  background-color: red;
-  color: whitesmoke;
-  z-index: 2;
-}
-
 .Navbar__cart--icon:hover {
   transform: scale(1.2);
 }
 
-@media screen and (max-width: 911px) {
+.Navbar__cart--num {
+  position: absolute;
+  top: 15%;
+  right: 7%;
+  color: white;
+  padding: 2px;
+  width: 22px;
+  height: 22px;
+  border-radius: 100%;
+  text-align: center;
+  font-weight: 600;
+  font-size: 0.9rem;
+  background-color: #e91e63;
+  /* filter: saturate(2); */
+  z-index: 2;
+}
+
+@media screen and (max-width: 768px) {
+  .Navbar__logo {
+    left: 0;
+    width: 100px;
+    height: 62.3px;
+  }
   .Navbar form {
-    width: 50%;
+    flex-wrap: wrap;
+    width: 35%;
+  }
+  .Navbar select {
+    width: 100%;
+    padding: 0 12px;
   }
 }

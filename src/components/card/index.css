@@ -1,12 +1,12 @@
 .Card {
+  position: relative;
   display: flex;
   flex-direction: column;
-  /* justify-content: flex-start; */
-  width: 180px;
-  height: 360px;
-  border-radius: 6px;
-  box-shadow: 0 0 4px lightgray;
-  color: whitesmoke;
+  width: 360px;
+  height: 320px;
+  -shadow: 0 0 1px 1px rgb(19, 21, 30);
+  background-color: white;
+  color: rgba(30, 33, 48, 1);
   cursor: pointer;
   transition: transform 0.35s;
   scroll-snap-align: start;
@@ -17,19 +17,38 @@
 }
 
 .Card__image {
-  width: 180px;
-  height: 40%;
-  border-top-right-radius: 6px;
-  border-top-left-radius: 6px;
+  width: 320px;
+  height: 55%;
   object-fit: cover;
+}
+
+.Card__wrapper {
+  position: absolute;
+  top: 10px;
+  right: 5%;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  height: 30px;
+  padding: 10px;
+  background-color: white;
+  border-radius: 18px;
+  border: 2px solid rgba(30, 33, 48, 1);
+  font-size: 0.9rem;
 }
 
 .Card__text {
   padding: 10px;
-  height: 60%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+.Card__text--firstline {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
 }
 
 .Card__text--title {
@@ -37,27 +56,18 @@
   letter-spacing: 1px;
 }
 
+.Card__text--price {
+  font-weight: 600;
+  text-align: right;
+}
+
 .Card__text--desc {
   font-size: 0.85rem;
+  flex-basis: 40px;
 }
 
 .Card__text--value {
   display: flex;
   justify-content: space-around;
   align-items: center;
-}
-
-.Card__text--discount {
-  padding: 2px 4px;
-  background-color: chartreuse;
-  color: black;
-  border-radius: 6px;
-  font-weight: bold;
-  font-style: italic;
-}
-
-.Card__text--price {
-  font-weight: 600;
-  font-size: 1.2rem;
-  text-align: right;
 }

@@ -10,9 +10,15 @@ const MiniCardList = ({ endpoint, categoryInput, categorySelect }) => {
     GET(endpoint).then((data) => setMiniCards(() => data.products));
   }, []);
 
-  const filteredData = miniCards.filter((card) =>
-    !categoryInput ? miniCards : card.category === categoryInput
+  const selectedData = miniCards.filter((card) =>
+    !categorySelect || categorySelect === "Select"
+      ? miniCards
+      : card.category === categorySelect
   );
+
+  // const filteredData = miniCards.filter((card) =>
+  //   !categoryInput ? miniCards : card.category === categoryInput
+  // );
 
   // CATEGORY: [
   // "smartphones",
@@ -39,8 +45,13 @@ const MiniCardList = ({ endpoint, categoryInput, categorySelect }) => {
 
   return (
     <div className="MiniCardList">
-      {filteredData.map((card) => (
-        <MiniCard imgSrc={card.thumbnail} imgAlt={card.title} key={card.id} />
+      {selectedData.map((card) => (
+        <MiniCard
+          imgSrc={card.thumbnail}
+          imgAlt={card.title}
+          desc={card.title}
+          key={card.id}
+        />
       ))}
     </div>
   );

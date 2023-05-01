@@ -1,9 +1,11 @@
 .MiniCardList {
   display: flex;
-  /* justify-content: center; */
+  justify-content: center;
+  align-items: center;
   gap: 10px;
-  margin: 0 50px;
+  margin: 40px 50px;
   padding: 10px;
-  overflow-x: scroll;
+  height: 165px;
+  overflow-x: auto;
   scroll-snap-type: x mandatory;
 }

@@ -8,25 +8,30 @@ const ModalCart = ({ cartList, setCartVisibility, setCartList }) => {
     <div className="ModalCart">
       <div className="ModalCart__content">
         <h3 className="ModalCart__content--title">CART</h3>
-        {!cartList.length ? (
+        {!cartList?.length ? (
           <h4 className="ModalCart__content--note">Add items...</h4>
         ) : (
-          cartList.map((item) => (
+          cartList?.map((item) => (
             <CartItem cartData={item} setCartList={setCartList} key={item.id} />
           ))
         )}
 
         <button onClick={onHandleClose} className="ModalCart--close">
-          x
+          ✖
         </button>
         <h4
-          className={`ModalCart__content--total ${!cartList.length && "none"}`}
+          className={`ModalCart__content--total ${!cartList?.length && "none"}`}
         >
           <span>Total (USD):</span>
-          <span>$ {cartList.reduce((acc, item) => acc + item.price, 0)}</span>
+          <span style={{ fontWeight: 600 }}>
+            ${" "}
+            {cartList
+              ?.reduce((acc, item) => acc + item.price * item.quantity, 0)
+              .toFixed(2)}
+          </span>
         </h4>
         <button
-          className={`ModalCart__content--btn ${!cartList.length && "none"}`}
+          className={`ModalCart__content--btn ${!cartList?.length && "none"}`}
         >
           Confirm Order
         </button>
