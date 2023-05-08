@@ -32,6 +32,7 @@ const ProductDetail = ({ productData, setCartList, setModalContext }) => {
           ),
         ])
       );
+      alert(`${productData.title} added to cart!`);
     } else {
       // se il prodotto non è già nel lista...
       setCartList(() => [
@@ -45,11 +46,8 @@ const ProductDetail = ({ productData, setCartList, setModalContext }) => {
           { ...productData, quantity: 1 },
         ])
       );
+      alert(`${productData.title} added to cart!`);
     }
-    console.log(
-      JSON.parse(localStorage.getItem("cartList")),
-      JSON.parse(localStorage.getItem("cartList")).length
-    );
   };
 
   // const onHandleAddCart = () => {
